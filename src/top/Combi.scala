@@ -20,9 +20,9 @@ object Combi extends App {
   }
 
   def subStrings(str: String): List[String] = for {
-    sub <- str.tails.toList.init
-    rest <- sub.tail.inits
-  } yield sub.head + rest
+    tail <- str.tails.toList
+    init <- tail.inits
+  } yield init
 
   def multiSplits(str: String): List[List[String]] = str match {
     case "" => List(List())
