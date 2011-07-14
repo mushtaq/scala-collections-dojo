@@ -22,6 +22,7 @@ object Combi extends App {
   def subStrings(str: String): List[String] = for {
     tail <- str.tails.toList
     init <- tail.inits
+    if init != ""
   } yield init
 
   def multiSplits(str: String): List[List[String]] = str match {
