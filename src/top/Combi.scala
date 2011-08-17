@@ -9,6 +9,8 @@ object Combi extends App {
       ys <- comb(tail, r - 1)
     } yield head :: ys
   }
+  
+  println("testing github's edit online feature.. looks very cool")
 
   def perm(xs: List[Int], r: Int): List[List[Int]] = r match {
     case 0 => List(List())
