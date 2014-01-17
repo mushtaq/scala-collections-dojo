@@ -100,5 +100,58 @@ object Main extends App {
     
   
     
+
   
+}
+
+object A {
+
+  val xs = Seq(1, 2, 3)
+
+//  xs.foreach()
+//  xs.map()
+//  xs.flatMap()
+
+  xs.exists(_ > 4)
+
+  xs.forall(_ < 4)
+
+  Seq.empty[Int].forall(_ > 100)
+  Seq.empty[Int].exists(_ > 100)
+  Seq.empty[Int].map(_ + 1)
+
+  val ds = Seq.empty[Int]
+
+  val o1 = Option(10)
+  val o2 = Option.empty[Int]
+
+  o1.map(_ + 1)
+  o2.map(_ + 1).getOrElse(0)
+
+  xs.isEmpty
+  xs.nonEmpty
+
+  o1.isEmpty
+  o1.nonEmpty
+  o1.isDefined
+
+  o1.forall(_ > 100)
+  o1.exists(_ > 100)
+
+  def m: Seq[Int] = {
+    xs
+    o1
+
+    xs ++ o1
+  }
+
+
+  for {
+    x <- xs
+    o <- o1.toSeq
+  } yield x + o
+
+
+
+
 }
